@@ -3,6 +3,6 @@
 *.png -text
 *.jpg -text
 *.jpeg -text
-*.pdf -text
+*.pdf binary
 *.zip -text
 *.gitbundle -text
