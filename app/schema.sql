@@ -1,0 +1,31 @@
+PRAGMA foreign_keys = ON;
+CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS users (
+ id TEXT PRIMARY KEY, username TEXT NOT NULL UNIQUE COLLATE NOCASE,
+ password TEXT NOT NULL, role TEXT NOT NULL, active INTEGER NOT NULL DEFAULT 1,
+ created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS sessions (
+ token_hash TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id),
+ csrf TEXT NOT NULL, expires REAL NOT NULL
+);
+CREATE TABLE IF NOT EXISTS login_attempts (key TEXT PRIMARY KEY, failures INTEGER NOT NULL, until REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS records (
+ kind TEXT NOT NULL, id TEXT NOT NULL, data TEXT NOT NULL CHECK(json_valid(data)),
+ version INTEGER NOT NULL DEFAULT 1, updated_at TEXT NOT NULL,
+ PRIMARY KEY(kind,id)
+);
+CREATE INDEX IF NOT EXISTS records_kind ON records(kind);
+CREATE TABLE IF NOT EXISTS events (
+ seq INTEGER PRIMARY KEY AUTOINCREMENT, at TEXT NOT NULL, actor TEXT NOT NULL,
+ role TEXT NOT NULL, action TEXT NOT NULL, target TEXT NOT NULL,
+ detail TEXT NOT NULL CHECK(json_valid(detail)), provenance TEXT NOT NULL
+);
+CREATE TRIGGER IF NOT EXISTS events_no_update BEFORE UPDATE ON events
+ BEGIN SELECT RAISE(ABORT, 'History is append-only'); END;
+CREATE TRIGGER IF NOT EXISTS events_no_delete BEFORE DELETE ON events
+ BEGIN SELECT RAISE(ABORT, 'History is append-only'); END;
+CREATE TABLE IF NOT EXISTS operations (
+ actor TEXT NOT NULL, key TEXT NOT NULL, fingerprint TEXT NOT NULL,
+ result TEXT NOT NULL, PRIMARY KEY(actor,key)
+);
