@@ -12,7 +12,7 @@ Read the [run guide](app/README.md), [architecture/limits](docs/implementation/p
 
 **Evidence boundary:** software and browser tests use synthetic fixtures. Physical inventory, participant testing, phone-camera/printed-label validation, the strict accountability baseline and before/after improvements remain **NOT MEASURED**. The integrated direction is an owner decision, not a validated comparative winner. Earlier C4 records below remain historical. `final/` remains empty and reserved for the eventual academic submission.
 
-**Hosted demonstration:** [Open Beyond the Game](https://beyond-the-game-omega.vercel.app). Vercel serves the application with a private Supabase PostgreSQL backend. Synthetic hosted sign-in, checkout, return and separate inspection were verified. Generated access instructions are in local `app/private/cloud-access.txt`; they are excluded from Git. See the [cloud deployment and verification guide](docs/deployment/vercel-supabase.md).
+**Hosted application:** [Open Beyond the Game](https://beyond-the-game-omega.vercel.app). Vercel serves the application with a private Supabase PostgreSQL backend. Normal operation is enabled for new entries; all older records and their original provenance are retained. See the [operational transition](docs/deployment/operational-transition.md) and [cloud deployment guide](docs/deployment/vercel-supabase.md). Credentials stay in ignored local `app/private/` files.
 
 **GitHub:** research and application commits are published to [Praveen-ghostProtocol/BeyondTheGame](https://github.com/Praveen-ghostProtocol/BeyondTheGame). The initial integration permission problem was resolved. Vercel deployment currently uses source uploads; automatic deployments from GitHub pushes are not configured.
 

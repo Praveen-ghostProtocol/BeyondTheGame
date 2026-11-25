@@ -19,14 +19,14 @@ assets += [(f'VB-{i:03}', 'Volleyball') for i in range(1, 4)]
 assets += [('TT-rac-001', 'Table tennis racket 1')]
 js = """const qr=require('./app/static/vendor/qrcode.js');const ids=JSON.parse(process.argv[1]);console.log(JSON.stringify(ids.map(id=>{const q=qr(0,'M');q.addData('BTG:ASSET:'+id);q.make();return Array.from({length:q.getModuleCount()},(_,r)=>Array.from({length:q.getModuleCount()},(_,c)=>q.isDark(r,c)));})));"""
 matrices = json.loads(subprocess.check_output(['node', '-e', js, json.dumps([a[0] for a in assets])], cwd=ROOT))
-path = OUT / 'BeyondTheGame_Pilot_QR_Labels.pdf'
+path = OUT / 'BeyondTheGame_Equipment_QR_Labels.pdf'
 c = canvas.Canvas(str(path), pagesize=A4)
-c.setTitle('Beyond the Game - Pilot equipment QR labels')
+c.setTitle('Beyond the Game - Equipment QR labels')
 c.setAuthor('Beyond the Game project team')
 checks = []
 for page in range(2):
     c.setFillColorRGB(.07,.27,.20); c.setFont('Helvetica-Bold', 17)
-    c.drawString(12*mm, 282*mm, 'BEYOND THE GAME | PILOT LABELS')
+    c.drawString(12*mm, 282*mm, 'BEYOND THE GAME | EQUIPMENT LABELS')
     c.setFillColorRGB(0,0,0); c.setFont('Helvetica', 9)
     c.drawString(12*mm, 275*mm, 'A4 - Actual size / 100% - Single-sided - Do not fit to page')
     c.drawString(12*mm, 270*mm, 'Cut on dashed borders. Match each ID to one item. Test one label before attaching the batch.')
@@ -37,7 +37,7 @@ for page in range(2):
         c.setStrokeColorRGB(.65,.65,.65); c.setLineWidth(.4); c.setDash(2,2)
         c.rect(x,y,w,h); c.setDash()
         c.setFillColorRGB(0,0,0); c.setFont('Helvetica-Bold',8)
-        c.drawString(x+4*mm,y+48*mm,'BEYOND THE GAME / PILOT TEST')
+        c.drawString(x+4*mm,y+48*mm,'BEYOND THE GAME / ALAKNANDA')
         qx,qy=x+4*mm,y+10*mm; size=32*mm; matrix=matrices[i]; n=len(matrix); cell=size/(n+8)
         c.setFillColorRGB(1,1,1);c.rect(qx,qy,size,size,stroke=0,fill=1)
         c.setFillColorRGB(0,0,0)
@@ -51,7 +51,7 @@ for page in range(2):
         for line in ['Scan in the BTG app','Borrow when taking','Scan again to return']:
             c.drawString(tx,y+(21-4*['Scan in the BTG app','Borrow when taking','Scan again to return'].index(line))*mm,line)
         checks.append({'page':page,'id':aid,'qr_rect':[qx,qy,size,size]})
-    c.setFont('Helvetica',8);c.drawString(12*mm,8*mm,'Pilot IDs - match to actual equipment before use. BD-004 remains quarantined until assessed.')
+    c.setFont('Helvetica',8);c.drawString(12*mm,8*mm,'One permanent ID per item. Reprint the same ID when replacing a label.')
     c.drawRightString(198*mm,8*mm,f'{page+1} / 2');c.showPage()
 c.save()
 (ROOT / '.tmp/label-checks.json').write_text(json.dumps(checks))
