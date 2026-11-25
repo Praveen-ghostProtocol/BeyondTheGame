@@ -4,7 +4,19 @@
 
 First-principles systems research and redesign of shared sports-equipment management, beginning at **Alaknanda Hostel, IIT Madras**.
 
-## Status
+## Current status: Phase D application implemented
+
+**25 November 2026:** The owner-selected integrated equipment lifecycle application is implemented in [`app/`](app/README.md), with a Stitch-designed responsive interface, durable SQLite backend, authenticated roles, inventory/consumables/kits, 24/7 borrowing, physical pickup, partial returns, accepted custody transfers, damage, maintenance, procurement, key access, independent audits, analytics, QR scanning and opt-in label sheets.
+
+Run `python app/server.py --demo` and open **http://127.0.0.1:8000**. Generated local demo credentials are in `app/private/demo-access.txt` (excluded from Git). Real use starts separately with `python app/server.py --init`; real inventory is not prefilled. No package installation is required to run the app.
+
+Read the [run guide](app/README.md), [architecture/limits](docs/implementation/phase-d-architecture.md), [roles](docs/implementation/roles-and-operations.md), [B4 requirements mapping](docs/implementation/requirements-traceability.csv), [software verification report](docs/testing/phase-d-verification.md) and [deployment/push handoff](docs/deployment/local-pilot.md).
+
+**Evidence boundary:** software and browser tests use synthetic fixtures. Physical inventory, participant testing, phone-camera/printed-label validation, the strict accountability baseline and before/after improvements remain **NOT MEASURED**. The integrated direction is an owner decision, not a validated comparative winner. Earlier C4 records below remain historical. `final/` remains empty and reserved for the eventual academic submission.
+
+**GitHub:** local meaningful commits are preserved. The connected GitHub write attempt was rejected with 403 `Resource not accessible by integration`; direct Git networking is also unavailable. A successful remote push has not been claimed.
+
+## Historical Phase C4 status
 **Phase C4 — all eight owner policies approved 25 November 2026 (₹0 new spending), controlled-trial plan, evidence-gated readiness tools and a counterbalanced 216-run study schedule are prepared. Human trials, field validation, eight non-negotiable gates, and winner selection remain pending. No real accountability baseline or measured outcome improvement exists.** This repository package contains no invented measurements or fabricated incidents.
 
 ## Repository plan
@@ -13,7 +25,7 @@ First-principles systems research and redesign of shared sports-equipment manage
 - `data/templates/` — anonymized observation templates; no student personal details.
 - `docs/first-principles/` — Phase B analyses, beginning with B1 functional architecture, custody/state models and traceability.
 - `docs/solution-design/` — Phase C solution comparison and Phase D design (when produced).
-- `app/` — Phase D implementation (when produced).
+- `app/` - implemented Phase D application, run guide and bundled QR dependencies.
 - `tests/`, `docs/testing/` — Phase E validation (when produced).
 - `docs/deployment/` — Phase F deployment research (when produced).
 - `final/` — reserved for six-slide final submission and evidence appendix (create only when ready).

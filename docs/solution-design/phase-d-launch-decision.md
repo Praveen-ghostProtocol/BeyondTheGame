@@ -8,4 +8,4 @@ Read `../../README.md`, `c4-approved-owner-decisions.md`, `c4-evidence-status.md
 
 Priorities: inventory, item-/kit-level custody, role-based actions, returns, condition checks, maintenance, procurement and auditable transactions. Important guardrails: 24/7 access, not requiring guard inspections, safe conflict handling, no fictitious field measurements, match-day additional effort target <=60s, secure student data, economical QR labelling after end-to-end validation.
 
-**Implementation status:** No full Phase D application has been built in this snapshot. Existing `prototypes/` are earlier concept demos only.
+**Implementation update, 25 November 2026:** The full local Phase D application is now implemented in [`app/`](../../app/README.md). See [architecture](../implementation/phase-d-architecture.md) and [verification](../testing/phase-d-verification.md). Existing `prototypes/` remain earlier concept demos. Synthetic software tests do not change C4 field evidence or establish comparative effectiveness. Physical phone/label testing and live deployment checks remain pending.

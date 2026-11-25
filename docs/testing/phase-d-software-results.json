@@ -1,0 +1,60 @@
+{
+  "status": "PASSED",
+  "checks": 31,
+  "assertions": [
+    "Secretary signs in with persisted session",
+    "Dashboard has 15 synthetic durable assets",
+    "Field accountability remains Not measured",
+    "Inventory filters by permanent asset ID",
+    "Asset drawer opens with custody and condition",
+    "Request leaves physical custody at STORE",
+    "Physical pickup creates an active borrowing",
+    "Return declaration keeps equipment unavailable",
+    "Physical receipt starts separate inspection",
+    "Authorized inspection restores availability",
+    "Damage removes usable availability",
+    "Vendor return does not automatically certify usable",
+    "Partial delivery enrolls only one of two ordered assets",
+    "Received purchase requires inspection",
+    "One captain pickup commits all five kit components",
+    "Partial kit return preserves exactly the missing pad set",
+    "Guard key return remains separate from kit discrepancy",
+    "Administrator account creation works through UI",
+    "Completed demo audit stays excluded from field KPI",
+    "Manual scan fallback resolves registered asset",
+    "Mobile viewport has no horizontal document overflow",
+    "Mobile navigation opens",
+    "Mobile navigation has an accessible close control",
+    "Simulated camera denial presents working manual fallback",
+    "Simulated video QR passes through actual camera decode loop",
+    "Scanner stops video tracks after a match",
+    "Scan does not automatically borrow equipment",
+    "Label sheet is generated only on explicit registered-asset selection",
+    "Synthetic QR label remains visibly marked DEMO ONLY",
+    "Print CSS hides application navigation",
+    "No JavaScript runtime errors across all roles"
+  ],
+  "runtime": {
+    "node": "v22.18.0",
+    "chromium": "154.0.8037.0"
+  },
+  "transport": "Real HTTP handler over byte streams; socket/TLS and physical camera not certified",
+  "provenance": "SIMULATED SOFTWARE TESTS",
+  "screenshots": [
+    "screenshots/desktop-overview.png",
+    "screenshots/desktop-inventory.png",
+    "screenshots/mobile-asset.png"
+  ],
+  "executed_date": "2026-11-25",
+  "suites": {
+    "prior_python": 33,
+    "phase_d_python": 57,
+    "c3_javascript": 31,
+    "qr_javascript": 13,
+    "browser_assertions": 31
+  },
+  "total_checks": 165,
+  "failed": 0,
+  "field_trials": 0,
+  "field_accountability_baseline": "NOT MEASURED"
+}

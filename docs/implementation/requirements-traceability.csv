@@ -1,0 +1,41 @@
+requirement,implementation,software_verification,remaining_real_world_evidence
+B4-R01,Configurable routine 24h self-pickup authorization without secretary presence,request permission and browser pickup checks,Confirm actual hostel operating arrangement and night access
+B4-R02,Separate key records and loans,key return does not close equipment test and guard browser check,Observe physical key and equipment custody
+B4-R03,Key session never assigns equipment automatically,independent key/custody software checks,Stage overlapping room access with residents
+B4-R04,Unique permanent durable asset IDs,duplicate identity and search tests,Identify and enroll actual physical equipment
+B4-R05,Quantity stock lots and atomic kit consumption,negative balance and 10-minus-3 tests,Physical lot reconciliation
+B4-R06,Durable components plus consumable quantities in kit manifest,atomic unavailable kit and captain checkout checks,Verify actual kit contents
+B4-R07,Independent location/custodian/condition evidence and timestamps,damage preserves custody provenance test,Check physical attributes against records
+B4-R08,Mutually exclusive operational states and census sum,category denominator and reconciliation tests,Independent stock census
+B4-R09,Independent audits and reasoned append-only corrections,audit no-overwrite and before/after history tests,Actual independent discrepancies and reconciliation
+B4-R10,Request decisions and suitability rechecked at physical pickup,damaged/unavailable pickup rejection tests,Eligibility and request fulfilment observations
+B4-R11,SQLite write transaction and active-state checks,competing requests exactly one pickup succeeds,Deployment-host concurrency and failure smoke
+B4-R12,Request/approval distinct from collection,request leaves STORE and pickup confirmation tests,Observe actual physical handover
+B4-R13,Individual borrower or captain/team custody,student and team browser journeys,Agree real team responsibility with captains
+B4-R14,Recipient-accepted off-group component transfers,full and partial transfer tests,User burden and real handover compliance
+B4-R15,Return claim retains custody until separate physical receipt,return declaration and key independence tests,Physical missing-return test
+B4-R16,Partial component receipt preserves missing manifest,kit browser return leaves exactly CP-001,Physical kit reconciliation
+B4-R17,Pre-approved captain manifest and one atomic pickup,captain five-component browser pickup,Measure additional effort against <=60s target
+B4-R18,Separate receipt and condition inspection,receipt not usable and inspection browser checks,Actual authorized checker effort
+B4-R19,Damage quarantine blocks usable availability,damage custody and damaged pickup rejection tests,Physical segregation of unsafe equipment
+B4-R20,Discovery timestamp and unknown occurrence/fault,damage never infers blame test,Independent incident facts if available
+B4-R21,Damage reports with optional unresolved identity and acknowledgement,unknown-ID report and damage browser checks,Secretary response/adoption
+B4-R22,Separate maintenance milestones and vendor custody,repair chain test and browser milestone journey,Actual repair-shop participation and references
+B4-R23,Vendor return enters inspection and cannot restore itself,repair receipt and reinspection tests,Physical post-repair usability
+B4-R24,Secretary/admin retirement with reason and resolved custody,unauthorized retirement and retired exclusion tests,Hostel disposal permission
+B4-R25,Need/rationale quotes approval payment and receipt stages,procurement browser journey,Actual purchasing records and authorized actions
+B4-R26,Configurable unconfirmed threshold and office-only finance,threshold/three-vendor/role tests,Office confirmation of actual purchasing policy
+B4-R27,Physical partial receipt enrolls only received stock,partial and rollback receipt tests,Actual quantity and bill reconciliation
+B4-R28,Required priority rationale and transparent records,procurement rationale in browser case,Office/user review of priorities
+B4-R29,Strict all-three independent snapshot ratio,synthetic 6/10 arithmetic test,Real eligible independent sample
+B4-R30,Unknown versus contradicted plus sample/method/time,strict denominator and incomplete audit tests,Independent evidence references and sample limitations
+B4-R31,Category denominators repair endpoints and descriptive request counts,20percent-versus-3percent denominator test,Define service window and collect matched timings
+B4-R32,Truthful NOT MEASURED burden and retained C4 instruments,no fabricated burden in UI or reports,Counterbalanced participant timing and workload
+B4-R33,Append-only events and before/after correction reason,SQL trigger and correction tests,Operator record quality
+B4-R34,Version conflicts idempotent retries and pending reconciliation,stale/replay/offline exception tests,Network interruption and physical reconciliation on target host
+B4-R35,Server-enforced roles sessions and view redaction,HTTP auth/CSRF/role/identity-redaction tests,Deployment privacy and operational role review
+B4-R36,Private DB/credentials ignored and aggregate-only public export,export whitelist and tracked-file review,Consent and public artifact privacy review
+B4-R37,DEMO provenance immutable and original C4 evidence untouched,demo audit excluded from field metric,Matched baseline and field comparison still pending
+B4-R38,Software refinements recorded after actual synthetic checks,mobile close and Windows handle fixes verified,Field/user refinement not yet performed
+B4-R39,Visible role guidance and recovery procedures,browser mobile controls plus Help workflows,Unassisted training/usability test with actual operators
+B4-R40,Expected due dates and overdue counts without fines,borrower browser due dates and active-loan metrics,Agree reminder/escalation procedure without new fines
