@@ -235,6 +235,18 @@ class Store:
                 self.get(db, 'lots', text(line, 'id')); integer(line, 'quantity')
             return self.save(db, 'kits', {'id': ident(text(p, 'id')), 'name': text(p, 'name'),
                 'sport': text(p, 'sport'), 'assets': ids, 'lots': lots}, True)
+        if action == 'borrow_now':
+            permit(MANAGERS | {'student', 'captain', 'checker'})
+            need(self.get(db, 'settings', 'policy')['ordinary_self_pickup'],
+                 'Routine self-pickup is disabled; secretary authorization is required', 403)
+            need(not p.get('kit_id') and not p.get('team') and p.get('borrower', uid) == uid,
+                 'Direct borrowing is for your own individual equipment only', 403)
+            need(p.get('physical_confirmed') is True, 'Confirm that you are taking the equipment now')
+            # Create the internal authorization record and checkout in ONE transaction.
+            # Reuse availability/role rules without exposing a request step to residents.
+            r = self.apply(db, u, 'request_create', {**p, 'borrower': uid})
+            return self.apply(db, u, 'pickup', {'id': r['id'], 'version': r['version'],
+                'physical_confirmed': True, 'location': p.get('location') or 'SPORTS_GROUND'})
         if action == 'request_create':
             permit(MANAGERS | {'student', 'captain', 'checker'})
             kit = self.get(db, 'kits', p['kit_id']) if p.get('kit_id') else None

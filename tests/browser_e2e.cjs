@@ -54,15 +54,15 @@ async function main(){
   async function rolePage(role,viewport){const c=await browser.newContext({viewport:viewport||{width:1440,height:1000}});await attach(c);const p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));await login(p,role);return p;}
   const student=await rolePage('student');
   await navigate(student,'inventory');await student.getByLabel('Search inventory',{exact:true}).fill('CB-001');
-  await student.getByRole('button',{name:'Open →',exact:true}).click();await student.getByRole('button',{name:'Request equipment',exact:true}).click();
-  await dialogSubmit(student,'Create request');
-  let ss=await state(student),req=ss.data.requests[0];
-  checked('Request leaves physical custody at STORE',ss.data.assets.find(a=>a.id==='CB-001').custodian==='STORE');
-  await navigate(student,'borrowing');await student.getByRole('button',{name:'Confirm pickup',exact:true}).click();
-  await student.getByRole('dialog').getByRole('checkbox').check();await dialogSubmit(student,'Confirm');
-  ss=await state(student);let loan=ss.data.loans[0];checked('Physical pickup creates an active borrowing',loan.status==='ACTIVE');
-  await student.getByRole('button',{name:'Report return',exact:true}).click();await dialogSubmit(student,'Confirm');
+  await student.getByRole('button',{name:'Open →',exact:true}).click();await student.getByRole('button',{name:'Borrow this item',exact:true}).click();
+  await student.getByRole('dialog').getByRole('checkbox').check();await dialogSubmit(student,'Confirm borrowing');
+  let ss=await state(student),loan=ss.data.loans[0];
+  checked('Direct borrowing creates an active loan without an approval step',loan.status==='ACTIVE');
+  checked('Direct borrowing assigns private custody to the signed-in student',ss.data.assets.find(a=>a.id==='CB-001').custodian==='YOU');
+  await student.getByRole('button',{name:'Open →',exact:true}).click();await student.getByRole('button',{name:'Return this item',exact:true}).click();
+  await student.getByRole('dialog').getByRole('checkbox').check();await dialogSubmit(student,'Confirm return');
   checked('Return declaration keeps equipment unavailable',(await state(student)).data.assets.find(a=>a.id==='CB-001').status==='ISSUED');
+  await student.getByRole('button',{name:'Open →',exact:true}).click();checked('Repeat scan cannot offer a duplicate return',await student.getByRole('button',{name:'Return this item',exact:true}).count()===0);await student.getByRole('button',{name:'Close dialog'}).click();
   const check=await rolePage('checker');await navigate(check,'borrowing');
   await check.getByRole('button',{name:'Receive items',exact:true}).click();await check.getByRole('dialog').getByLabel('Physically received components',{exact:true}).selectOption(['CB-001']);
   await check.getByRole('dialog').getByRole('checkbox').check();await dialogSubmit(check,'Confirm');

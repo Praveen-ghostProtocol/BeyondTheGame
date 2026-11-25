@@ -92,12 +92,12 @@ const views = {
       panel('Consumable lots · quantity accounting',data.lots.length?table(['Lot / unit','Sport','Quantity remaining','Actions'],data.lots.map(l=>row([`<strong>${esc(l.name)}</strong><small class="mono">${esc(l.id)} · ${esc(l.unit)}</small>`,esc(l.sport),`<strong>${l.quantity}</strong>`,checker()?btn('Receive / consume','lot-adjust',l.id):'Quantity tracked by the store']))):empty('No consumable lots'));
   },
   borrowing() {
-    const requests=data.requests.map(r=>row([`<strong>${esc(r.purpose)}</strong><small class="mono">${esc(r.id)}</small>`,esc(r.team||r.borrower),`<span class="mono">${esc(r.assets.join(', '))}</span>`,date(r.due_at),badge(r.status),`<div class="actions">${r.status==='REQUESTED'&&manager()?btn('Approve','request-approve',r.id)+btn('Decline','request-deny',r.id):''}${r.status==='APPROVED'&&(r.borrower===me.id||manager())?btn('Confirm pickup','pickup',r.id,'primary small'):''}${['APPROVED','REQUESTED'].includes(r.status)&&(r.borrower===me.id||manager())?btn('Cancel','request-cancel',r.id):''}</div>`]));
+    const requests=data.requests.filter(r=>r.kit_id||r.team||r.approval_basis!=='ROUTINE_24H_POLICY'||r.status!=='COLLECTED').map(r=>row([`<strong>${esc(r.purpose)}</strong><small class="mono">${esc(r.id)}</small>`,esc(r.team||r.borrower),`<span class="mono">${esc(r.assets.join(', '))}</span>`,date(r.due_at),badge(r.status),`<div class="actions">${r.status==='REQUESTED'&&manager()?btn('Approve','request-approve',r.id)+btn('Decline','request-deny',r.id):''}${r.status==='APPROVED'&&(r.borrower===me.id||manager())?btn('Confirm pickup','pickup',r.id,'primary small'):''}${['APPROVED','REQUESTED'].includes(r.status)&&(r.borrower===me.id||manager())?btn('Cancel','request-cancel',r.id):''}</div>`]));
     const loans=data.loans.map(l=>{const late=l.remaining.length&&new Date(l.due_at)<new Date();return row([`<strong>${esc(l.team||l.borrower)}</strong><small class="mono">${esc(l.id)}</small>`,`<span class="mono">${esc(l.remaining.join(', ')||'All physically received')}</span>`,`${date(l.due_at)}${late?'<small>No automatic fine</small>':''}`,badge(late?'OVERDUE':l.status),`<div class="actions">${l.remaining.length&&(l.borrower===me.id||manager())?btn('Report return','return-report',l.id):''}${l.remaining.length&&checker()&&l.borrower!==me.id?btn('Receive items','return-receive',l.id,'primary small'):''}${l.status==='ACTIVE'&&(l.borrower===me.id||manager())?btn('Transfer custody','transfer',l.id):''}</div>`]);});
     const incoming=data.transfers.filter(t=>t.status==='PENDING'&&t.to===me.id).map(t=>`<div class="note"><b>Custody handover offered</b><p>${esc(t.from)} → you · ${esc(t.location)}. Accept only after physically receiving the equipment.</p>${btn('Accept handover','transfer-accept',t.id,'primary small')} ${btn('Reject','transfer-reject',t.id)}</div>`).join('');
-    return heading('Borrow. Play. Bring it back.','Approval, physical pickup, return declaration and inspection are separate steps.',btn('+ Borrow equipment','request-create','','primary'))+
+    return heading('Borrow. Play. Bring it back.','Scan to borrow. Scan again to record your return. Checker receipt and inspection stay separate.',btn('+ Borrow equipment','request-create','','primary'))+
       incoming+`<div class="note">Routine individual pickup is available 24/7 under the configured policy. Team/tournament kits need pre-approval. Returning a room key does not close a borrowing.</div>`+
-      panel('Borrowing requests',requests.length?table(['Purpose / reference','Responsible party','Manifest','Return by','Status','Actions'],requests):empty('No borrowing requests','Choose equipment from the inventory to get started.'))+
+      panel('Team approvals & pending collections',requests.length?table(['Purpose / reference','Responsible party','Manifest','Return by','Status','Actions'],requests):empty('No approvals or collections pending','Routine individual borrowing needs no separate request.'))+
       panel('Equipment custody & returns',loans.length?table(['Borrower / team','Outstanding components','Due date','Status','Actions'],loans):empty('No equipment borrowings'));
   },
   kits() {
@@ -153,7 +153,7 @@ const views = {
   },
   help() {
     return heading('A simple system. A clear handover.',`Your account code: <code>${esc(me.id)}</code>. Use the app alongside physical equipment and existing hostel procedures.`)+
-      `<div class="help-grid">${[['For residents',['Find an available item or scan its equipment QR.','Create a request and confirm actual pickup only when holding the item.','Share within your playing group under the responsible captain.','Report returns; a separate checker records physical receipt and inspection.']],['For captains & checkers',['Pre-authorize team kits before match day.','Confirm the kit manifest in one atomic pickup.','Receive only components actually returned; missing items stay outstanding.','Inspect returned and repaired items separately before marking usable.']],['For guards',['Record key handover and return only.','Keep the current ID and register process.','Do not inspect equipment or infer damage responsibility from key custody.']],['For the secretary & office',['Register actual inventory; keep unknown condition visible.','Acknowledge damage, assess repair, record authorization and vendor custody.','Confirm purchasing policy before financial approvals.','Record partial physical receipts; inspect new stock before availability.']]].map(([title,steps])=>`<section class="card"><h2>${title}</h2><ol>${steps.map(x=>`<li>${x}</li>`).join('')}</ol></section>`).join('')}</div><hr class="divider">`+
+      `<div class="help-grid">${[['For residents',['Find an available item or scan its equipment QR.','Scan an available item and confirm Borrow this item when taking it.','Share within your playing group under the responsible captain.','Scan the item again and choose Return this item after placing it back. A separate checker receives and inspects it.']],['For captains & checkers',['Pre-authorize team kits before match day.','Confirm the kit manifest in one atomic pickup.','Receive only components actually returned; missing items stay outstanding.','Inspect returned and repaired items separately before marking usable.']],['For guards',['Record key handover and return only.','Keep the current ID and register process.','Do not inspect equipment or infer damage responsibility from key custody.']],['For the secretary & office',['Register actual inventory; keep unknown condition visible.','Acknowledge damage, assess repair, record authorization and vendor custody.','Confirm purchasing policy before financial approvals.','Record partial physical receipts; inspect new stock before availability.']]].map(([title,steps])=>`<section class="card"><h2>${title}</h2><ol>${steps.map(x=>`<li>${x}</li>`).join('')}</ol></section>`).join('')}</div><hr class="divider">`+
       panel('Interrupted, offline or conflicting movement',`<div class="panel-body"><p>Do not retry a physical handover as a new loan. Refresh first and check the record. The database rejects stale versions and duplicate issues. If something physically moved while offline, record a reconciliation case with the asset code and details. A secretary must compare the physical item and record a reasoned correction.</p>${btn('+ Reconciliation case','conflict','','primary small')}</div>`)+
       panel('Reconciliation inbox',data.conflicts.length?table(['Asset / report','Status','Action'],data.conflicts.map(c=>row([`${esc(c.asset_id)}<small>${esc(c.description)}</small>`,badge(c.status),manager()&&c.status==='PENDING'?btn('Resolve after checking','conflict-resolve',c.id):esc(c.resolution||'Awaiting secretary')]))):empty('No reconciliation cases'))+
       `<div class="note amber">The software tests are synthetic checks. C4 participant trials, the physical accountability baseline, adoption and the ≤60-second tournament target remain unmeasured. QR labels must use real registered asset IDs after on-device scanning is verified.</div>`;
@@ -203,7 +203,8 @@ function assetDetail(id) {
   const loan=a.loan_id?record('loans',a.loan_id):data.loans.find(l=>l.remaining.includes(id));
   const history=data.events.filter(e=>e.target===id||JSON.stringify(e.detail||{}).includes(`"${id}"`)).slice(0,12);
   let actions=btn('Report damage','damage',a.id);
-  if(a.status==='AVAILABLE'&&['admin','secretary','student','captain','checker'].includes(me.role))actions=btn('Request equipment','request-asset',id,'primary')+actions;
+  if(a.status==='AVAILABLE'&&['admin','secretary','student','captain','checker'].includes(me.role))actions=btn(data.settings[0]?.ordinary_self_pickup?'Borrow this item':'Request authorization','request-asset',id,'primary')+actions;
+  if(loan&&loan.borrower===me.id&&loan.remaining.includes(id)&&!a.return_reported)actions=btn('Return this item','return-asset',id,'primary')+actions;
   if(checker()&&!a.loan_id&&['INSPECTION','QUARANTINE','UNKNOWN'].includes(a.status))actions+=btn('Inspect condition','inspect',id,'primary');
   if(manager()&&a.status==='QUARANTINE'&&!a.loan_id)actions+=btn('Open repair case','repair-create',id);
   if(manager()&&!a.loan_id&&!['ISSUED','REPAIR','RETIRED'].includes(a.status))actions+=btn('Correct record','asset-correct',id)+btn('Retire asset','retire',id,'danger');
@@ -212,15 +213,17 @@ function assetDetail(id) {
   const proof=Object.entries(a.evidence||{}).map(([attribute,e])=>row([esc(pretty(attribute)),date(e.recorded_at),esc(pretty(e.confidence)),esc(pretty(e.source))]));
   if(proof.length)$('#modal .divider').insertAdjacentHTML('beforebegin',`<hr class="divider">${panel('Evidence by attribute',table(['Attribute','Recorded at','Confidence','Source'],proof))}`);
 }
-function borrowForm(assetIds=[],kit) {
+function borrowForm(assetIds=[],kit,forceDirect=false) {
+  const direct=!kit&&data.settings[0]?.ordinary_self_pickup&&(forceDirect||me.role!=='captain');
   const choices=data.assets.filter(a=>a.status==='AVAILABLE').map(a=>[a.id,`${a.id} · ${a.name}`]);
   const due=new Date(Date.now()+86400000);const local=new Date(due.getTime()-due.getTimezoneOffset()*60000).toISOString().slice(0,16);
-  form(kit?'Request team kit':'Request equipment',[
-    ...(kit?[]:[field('assets','Equipment to request','multi',assetIds,{items:choices,full:true,hint:'Use Ctrl / Cmd to select several items on desktop.'})]),
+  form(kit?'Request team kit':direct?'Borrow equipment':'Request authorization',[
+    ...(kit?[]:[field('assets',direct?'Equipment to borrow':'Equipment to request','multi',assetIds,{items:choices,full:true,hint:'Use Ctrl / Cmd to select several items on desktop.'})]),
     field('purpose','Purpose','text',kit?'Tournament':'Practice',{full:true}),
-    ...(kit||me.role==='captain'?[field('team','Accountable team / group','text','',{optional:!kit,full:true})]:[]),
-    field('due_at','Expected return','datetime-local',local,{full:true})
-  ],(v,key)=>command('request_create',{...v,assets:v.assets||[],kit_id:kit?.id,due_at:new Date(v.due_at).toISOString()},key),'Create request',kit?`${esc(kit.name)} · ${kit.assets.length} components. This request does not move equipment. A secretary approves tournament kits before collection.`:'A request or approval does not prove physical pickup. Confirm collection as a separate step.');
+    ...(!direct&&(kit||me.role==='captain')?[field('team','Accountable team / group','text','',{optional:!kit,full:true})]:[]),
+    field('due_at','Expected return','datetime-local',local,{full:true}),
+    ...(direct?[field('physical_confirmed','I am taking this equipment now.','checkbox',false,{must:true})]:[])
+  ],(v,key)=>command(direct?'borrow_now':'request_create',{...v,assets:v.assets||[],kit_id:kit?.id,due_at:new Date(v.due_at).toISOString()},key),direct?'Confirm borrowing':'Create request',kit?`${esc(kit.name)} · ${kit.assets.length} components. This request does not move equipment. A secretary approves tournament kits before collection.`:direct?'No secretary approval is needed for routine borrowing. Confirm only when taking the selected equipment.':'This equipment needs authorization before collection.');
 }
 async function handleAction(action,id) {
   switch(action) {
@@ -233,7 +236,8 @@ async function handleAction(action,id) {
     case 'borrowing-view': closeDialog();location.hash='borrowing';render();break;
     case 'repairs-view': location.hash='repairs';render();break;
     case 'request-create': borrowForm();break;
-    case 'request-asset': borrowForm([id]);break;
+    case 'request-asset': borrowForm([id],null,true);break;
+    case 'return-asset':{const l=data.loans.find(l=>l.borrower===me.id&&l.remaining.includes(id));if(!l)throw new Error('This equipment is not borrowed by you.');form('Return this item',[field('physical_confirmed','I have placed this item back in the sports room.','checkbox',false,{must:true})],(v,key)=>command('return_report',{id:l.id,version:l.version,assets:[id]},key),'Confirm return','Records your return declaration now. The checker receives and inspects equipment separately.');break;}
     case 'request-kit': borrowForm([],record('kits',id));break;
     case 'asset-create':form('Register a durable item',[
       field('id','Permanent equipment ID','text','',{hint:'Letters, digits and hyphens. One ID per physical durable item.'}),field('name','Equipment name'),

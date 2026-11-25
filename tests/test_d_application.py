@@ -40,6 +40,59 @@ class DomainTests(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
+    def direct_borrow(self, aid='TEST-A', user=None, key=None, **extra):
+        return self.cmd('borrow_now', {'assets': [aid], 'purpose': 'Synthetic direct borrow',
+            'due_at': (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat(),
+            'physical_confirmed': True, **extra}, user or self.student, key)
+
+    def test_direct_borrow_and_scan_return_separate_from_receipt(self):
+        self.asset(); loan = self.direct_borrow()
+        self.assertEqual('ACTIVE', loan['status'])
+        self.assertEqual(self.student['id'], self.get('assets', 'TEST-A')['custodian'])
+        reported = self.cmd('return_report', {'id': loan['id'], 'version': loan['version'],
+            'assets': ['TEST-A']}, self.student)
+        self.assertEqual('RETURN_REPORTED', reported['status'])
+        self.assertTrue(self.get('assets', 'TEST-A')['return_reported'])
+        self.assertEqual('ISSUED', self.get('assets', 'TEST-A')['status'])
+
+    def test_direct_borrow_retry_is_idempotent(self):
+        self.asset(); key = uuid.uuid4().hex
+        payload = {'assets': ['TEST-A'], 'purpose': 'Synthetic', 'physical_confirmed': True,
+            'due_at': (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat()}
+        first = self.cmd('borrow_now', payload, self.student, key)
+        self.assertEqual(first, self.cmd('borrow_now', payload, self.student, key))
+        with self.store.connect() as db:
+            self.assertEqual(1, db.execute("SELECT COUNT(*) FROM records WHERE kind='loans'").fetchone()[0])
+
+    def test_direct_borrow_unavailable_rolls_back_internal_request(self):
+        self.asset(condition='DAMAGED')
+        with self.assertRaises(Problem): self.direct_borrow()
+        with self.store.connect() as db:
+            self.assertEqual(0, db.execute("SELECT COUNT(*) FROM records WHERE kind='requests'").fetchone()[0])
+
+    def test_direct_borrow_cannot_bypass_policy_or_team_approval(self):
+        self.asset()
+        with self.assertRaises(Problem): self.direct_borrow(team='Team')
+        with self.assertRaises(Problem): self.direct_borrow(borrower=self.checker['id'])
+        with self.store.transaction() as db:
+            policy = self.store.get(db, 'settings', 'policy')
+            self.store.save(db, 'settings', {**policy, 'ordinary_self_pickup': False})
+        with self.assertRaises(Problem): self.direct_borrow()
+
+    def test_direct_borrow_requires_collection_and_eligible_role(self):
+        self.asset()
+        with self.assertRaises(Problem): self.direct_borrow(physical_confirmed=False)
+        with self.assertRaises(Problem): self.direct_borrow(user=self.users['guard'])
+
+    def test_competing_direct_borrow_has_one_winner(self):
+        self.asset()
+        def attempt(role):
+            try: return self.direct_borrow(user=self.users[role])['id']
+            except Problem: return None
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(attempt, ['student', 'captain']))
+        self.assertEqual(1, len([r for r in results if r]))
+
     def cmd(self, action, p, user=None, key=None):
         return self.store.command(user or self.sec, action, p, key or uuid.uuid4().hex)
 

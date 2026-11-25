@@ -18,6 +18,8 @@ Read the [run guide](app/README.md), [architecture/limits](docs/implementation/p
 
 **Local startup:** double-click `Start-Local.cmd` on your computer, or keep the Python command above running in a terminal. A sandbox-launched process was not reliably accessible from the host browser; use the hosted demonstration while checking local startup.
 
+**Routine student workflow:** scan an available item → **Borrow this item** → confirm collection. Scan it again → **Return this item** → confirm it was placed back. No separate request/approval step is needed under the routine pickup policy. Team kits retain approval; checker receipt and condition inspection remain separate. See [direct borrowing](docs/implementation/direct-student-borrowing.md).
+
 ## Historical Phase C4 status
 **Phase C4 — all eight owner policies approved 25 November 2026 (₹0 new spending), controlled-trial plan, evidence-gated readiness tools and a counterbalanced 216-run study schedule are prepared. Human trials, field validation, eight non-negotiable gates, and winner selection remain pending. No real accountability baseline or measured outcome improvement exists.** This repository package contains no invented measurements or fabricated incidents.
 
