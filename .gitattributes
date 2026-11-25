@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.xlsx -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.pdf -text
+*.zip -text
+*.gitbundle -text
