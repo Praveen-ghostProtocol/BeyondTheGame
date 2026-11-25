@@ -1,5 +1,3 @@
-> **LATEST OWNER DECISION (25 Nov 2026):** Proceed to Phase D by building Alternative C (integrated lifecycle application) as a user-approved development direction, **without claiming C4 field trials occurred**. Print QR labels only after the app's scanning workflow is implemented and tested. See [Phase D launch decision](docs/solution-design/phase-d-launch-decision.md).
-
 # Beyond the Game
 
 First-principles systems research and redesign of shared sports-equipment management, beginning at **Alaknanda Hostel, IIT Madras**.
