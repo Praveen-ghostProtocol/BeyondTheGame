@@ -19,7 +19,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from domain import MANAGERS, Problem, Store, need, now, text
-from security import authenticate, create_user, password_hash, session, verify
+from security import authenticate, create_user, demo_session, is_demo, password_hash, session, verify
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT / 'static'
@@ -155,7 +155,12 @@ class Handler(BaseHTTPRequestHandler):
                 if error:
                     self.reply({'error': error}, status); return
                 self.reply({'user': result['user'], 'csrf': result['csrf']}, cookie=self.cookie(result['token'])); return
+            if path == '/api/demo-login':
+                result = demo_session(store, p.get('role'))
+                self.reply({'user': result['user'], 'csrf': result['csrf']}, cookie=self.cookie(result['token'])); return
             user, _ = self.auth(mutation=True)
+            need(path == '/api/logout' or not is_demo(user),
+                 'Demo mode is view-only, so real hostel records stay untouched. Watch the demo video to see this step.', 403)
             if path == '/api/logout':
                 with store.transaction() as db:
                     db.execute('DELETE FROM sessions WHERE token_hash=?', (hashlib.sha256(self.token().encode()).hexdigest(),))

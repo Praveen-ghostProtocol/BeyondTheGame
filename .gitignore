@@ -25,3 +25,6 @@ test-results/
 app/private/
 .vercel/
 public/
+
+.vercel
+.env*

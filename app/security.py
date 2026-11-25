@@ -63,6 +63,30 @@ def authenticate(store, username, password, client):
         return {'token': token, 'csrf': csrf, 'user': {'id': row['id'], 'username': row['username'], 'role': row['role']}}, None, 200
 
 
+DEMO_ROLES = ('student', 'secretary')
+
+
+def demo_session(store, role):
+    """Password-free, view-only reviewer session; demo users are created on first use."""
+    need(role in DEMO_ROLES, 'Choose student or secretary')
+    username = 'demo-' + role
+    unusable = password_hash(secrets.token_urlsafe(32))  # nobody can sign in with a password
+    with store.transaction() as db:
+        row = db.execute('SELECT id,username,role FROM users WHERE username=?', (username,)).fetchone()
+        if not row:
+            uid = 'U-' + uuid.uuid4().hex[:12]
+            db.execute('INSERT INTO users VALUES(?,?,?,?,1,?)', (uid, username, unusable, role, now()))
+            row = {'id': uid, 'username': username, 'role': role}
+        token = secrets.token_urlsafe(32)
+        csrf = secrets.token_urlsafe(32)
+        db.execute('INSERT INTO sessions VALUES(?,?,?,?)', (hashlib.sha256(token.encode()).hexdigest(), row['id'], csrf, time.time() + 7200))
+        return {'token': token, 'csrf': csrf, 'user': {'id': row['id'], 'username': row['username'], 'role': row['role']}}
+
+
+def is_demo(user):
+    return user['username'].startswith('demo-')
+
+
 def session(store, token):
     with store.connect() as db:
         row = db.execute('SELECT s.csrf,u.id,u.username,u.role FROM sessions s JOIN users u ON u.id=s.user_id '
