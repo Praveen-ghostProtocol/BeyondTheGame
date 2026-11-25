@@ -1,0 +1,13 @@
+trace_id,evidence_finding,evidence_ids,principle_or_transformer,requirement_ids,test_ids
+B4-E01,Key ledger != asset movement,A1-003;A1-004;A2-011,Decompose,B4-R02;B4-R03;B4-R11;B4-R12;B4-R15,B4-T02;B4-T08;B4-T10
+B4-E02,Informal team transfer / multiple borrowers,A2-001;A2-003;A2-012,Decompose;Perturb,B4-R03;B4-R13;B4-R14;B4-R32,B4-T01;B4-T09;B4-T24
+B4-E03,Tournament captain kit exceptions,A2-009;A3-012,Aggregate;Perturb,B4-R06;B4-R16;B4-R17,B4-T05;B4-T11
+B4-E04,"Damage discovered later, mixed with usable",A1-009;A1-010;A2-005,Decompose;Feedback,B4-R18;B4-R19;B4-R20;B4-R21;B4-R23,B4-T12;B4-T13;B4-T14;B4-T16
+B4-E05,No audited physical stock denominator,A2-008;A3-006;A3-014,Aggregate;Normalize,B4-R04;B4-R05;B4-R07;B4-R08;B4-R09;B4-R29;B4-R30,B4-T03;B4-T04;B4-T06;B4-T07;B4-T22;B4-T32
+B4-E06,Purchases via office and vendors; money threshold reported,A1-012;A2-007;A2-008;A3-011,Decompose;Conservation,B4-R25;B4-R26;B4-R27;B4-R28,B4-T18;B4-T19;B4-T20;B4-T21
+B4-E07,Repair timeline includes multiple contributors,A3-008;A3-009,Decompose,B4-R22;B4-R23;B4-R24,B4-T15;B4-T16;B4-T17
+B4-E08,Available 24/7; guard not inspector; friction concerns,A1-002;A1-011;A2-012;A3-005,Perturb,B4-R01;B4-R17;B4-R32;B4-R34;B4-R39,B4-T01;B4-T11;B4-T24;B4-T26;B4-T30
+B4-E09,KPI selected; current rate unmeasured,A3-013;A3-014,Normalize,B4-R29;B4-R30;B4-R31;B4-R37,B4-T22;B4-T23;B4-T28
+B4-E10,Role separation and public-research privacy,A1-011;A2-006;A1-003,Authority;Evidence,B4-R24;B4-R35;B4-R36,B4-T17;B4-T27
+B4-E11,No approval to change workflow or claimed result,A3-015;A3-014,Evidence integrity;Iteration,B4-R37;B4-R38,B4-T28;B4-T29
+B4-E12,Priorized user interest is accurate operations not search speed,A1-008;A1-017,Function-first design,B4-R10;B4-R32;B4-R40,B4-T01;B4-T24;B4-T31

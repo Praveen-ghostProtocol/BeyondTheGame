@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "kind": "SYNTHETIC_LOGIC_CHECKS",
+    "not": "field trial, outcome evidence, approval, or C2 measured comparison",
+    "method": "Deterministic concept workflow mechanics executed with invented identifiers",
+    "scenario_count": 12,
+    "concepts": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "results": [
+    {
+      "scenario": "C2-S01",
+      "concept": "A",
+      "mechanism": "Room key change independent of item state",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S02",
+      "concept": "A",
+      "mechanism": "Last usable item conflict handling",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S03",
+      "concept": "A",
+      "mechanism": "Separate durable IDs and consumable lot conservation",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S04",
+      "concept": "A",
+      "mechanism": "Off-ground handover retains named operational custody",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S05",
+      "concept": "A",
+      "mechanism": "Key return and self-declared return do not verify stock",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S06",
+      "concept": "A",
+      "mechanism": "Kit manifest or manual checklist mechanism",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S07",
+      "concept": "A",
+      "mechanism": "Late damage report retains unknown occurrence time",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S08",
+      "concept": "A",
+      "mechanism": "Repair return requires independent inspection",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S09",
+      "concept": "A",
+      "mechanism": "Receipt mismatch visible without fabricated enrolled item",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S10",
+      "concept": "A",
+      "mechanism": "Offline conflict cannot silently overwrite item",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S11",
+      "concept": "A",
+      "mechanism": "Unknown audit attribute is not counted correct",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S12",
+      "concept": "A",
+      "mechanism": "Aggregate inventory state conservation",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S01",
+      "concept": "B",
+      "mechanism": "Room key change independent of item state",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S02",
+      "concept": "B",
+      "mechanism": "Last usable item conflict handling",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S03",
+      "concept": "B",
+      "mechanism": "Separate durable IDs and consumable lot conservation",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S04",
+      "concept": "B",
+      "mechanism": "Off-ground handover retains named operational custody",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S05",
+      "concept": "B",
+      "mechanism": "Key return and self-declared return do not verify stock",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S06",
+      "concept": "B",
+      "mechanism": "Kit manifest or manual checklist mechanism",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S07",
+      "concept": "B",
+      "mechanism": "Late damage report retains unknown occurrence time",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S08",
+      "concept": "B",
+      "mechanism": "Repair return requires independent inspection",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S09",
+      "concept": "B",
+      "mechanism": "Receipt mismatch visible without fabricated enrolled item",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S10",
+      "concept": "B",
+      "mechanism": "Offline conflict cannot silently overwrite item",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S11",
+      "concept": "B",
+      "mechanism": "Unknown audit attribute is not counted correct",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S12",
+      "concept": "B",
+      "mechanism": "Aggregate inventory state conservation",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S01",
+      "concept": "C",
+      "mechanism": "Room key change independent of item state",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S02",
+      "concept": "C",
+      "mechanism": "Last usable item conflict handling",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S03",
+      "concept": "C",
+      "mechanism": "Separate durable IDs and consumable lot conservation",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S04",
+      "concept": "C",
+      "mechanism": "Off-ground handover retains named operational custody",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S05",
+      "concept": "C",
+      "mechanism": "Key return and self-declared return do not verify stock",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S06",
+      "concept": "C",
+      "mechanism": "Kit manifest or manual checklist mechanism",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S07",
+      "concept": "C",
+      "mechanism": "Late damage report retains unknown occurrence time",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S08",
+      "concept": "C",
+      "mechanism": "Repair return requires independent inspection",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S09",
+      "concept": "C",
+      "mechanism": "Receipt mismatch visible without fabricated enrolled item",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S10",
+      "concept": "C",
+      "mechanism": "Offline conflict cannot silently overwrite item",
+      "result": "LOGIC_CHECK_PASS",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S11",
+      "concept": "C",
+      "mechanism": "Unknown audit attribute is not counted correct",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    },
+    {
+      "scenario": "C2-S12",
+      "concept": "C",
+      "mechanism": "Aggregate inventory state conservation",
+      "result": "DESIGN_ONLY_NOT_END_TO_END_TESTED",
+      "mechanism_sanity": true,
+      "evidence": "SYNTHETIC_CODE_EXECUTION"
+    }
+  ]
+}

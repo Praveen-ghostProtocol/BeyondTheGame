@@ -1,0 +1,9 @@
+scenario_label,administrative_state,hypothetical_item_count,description
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,available,31,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,issued,9,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,pending_inspection,2,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,quarantine,3,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,external_repair,2,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,missing_unknown,1,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,retired,2,"One snapshot, mutually exclusive status assignment"
+FICTITIOUS ACCOUNTING EXAMPLE; NOT AN AUDIT,TOTAL (including retired),50,active=48; immediately available=31; count once only

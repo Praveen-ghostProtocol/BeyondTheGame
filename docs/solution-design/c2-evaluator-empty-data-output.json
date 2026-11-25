@@ -1,0 +1,61 @@
+{
+  "status": "NOT MEASURED",
+  "setting": "ALL",
+  "by_concept": {
+    "A": {
+      "observed_trials": 0,
+      "completed_trials": 0,
+      "task_success_rate": null,
+      "median_completed_total_seconds": null,
+      "median_actor_active_seconds": {
+        "student": null,
+        "guard": null,
+        "secretary": null
+      },
+      "eligible_audits": 0,
+      "strict_triad_correct": 0,
+      "strict_accountability_rate": null,
+      "unknown_audit_count": 0,
+      "contradicted_audit_count": 0,
+      "wrong_audit_count": 0,
+      "incomplete_audit_count": 0
+    },
+    "B": {
+      "observed_trials": 0,
+      "completed_trials": 0,
+      "task_success_rate": null,
+      "median_completed_total_seconds": null,
+      "median_actor_active_seconds": {
+        "student": null,
+        "guard": null,
+        "secretary": null
+      },
+      "eligible_audits": 0,
+      "strict_triad_correct": 0,
+      "strict_accountability_rate": null,
+      "unknown_audit_count": 0,
+      "contradicted_audit_count": 0,
+      "wrong_audit_count": 0,
+      "incomplete_audit_count": 0
+    },
+    "C": {
+      "observed_trials": 0,
+      "completed_trials": 0,
+      "task_success_rate": null,
+      "median_completed_total_seconds": null,
+      "median_actor_active_seconds": {
+        "student": null,
+        "guard": null,
+        "secretary": null
+      },
+      "eligible_audits": 0,
+      "strict_triad_correct": 0,
+      "strict_accountability_rate": null,
+      "unknown_audit_count": 0,
+      "contradicted_audit_count": 0,
+      "wrong_audit_count": 0,
+      "incomplete_audit_count": 0
+    }
+  },
+  "data_warnings": []
+}

@@ -1,0 +1,25 @@
+scenario_label,issue_capture_probability_assumed,transfer_capture_probability_assumed,unrecorded_transfer_opportunities_k_assumed,location_capture_probability_assumed,condition_capture_probability_assumed,all_records_present_probability_modelled,interpretation
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.5,0,0.9,0.9,0.7695,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.5,1,0.9,0.9,0.38475,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.5,2,0.9,0.9,0.192375,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.5,3,0.9,0.9,0.096187,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.5,4,0.9,0.9,0.048094,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.5,5,0.9,0.9,0.024047,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.7,0,0.9,0.9,0.7695,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.7,1,0.9,0.9,0.53865,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.7,2,0.9,0.9,0.377055,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.7,3,0.9,0.9,0.263938,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.7,4,0.9,0.9,0.184757,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.7,5,0.9,0.9,0.12933,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.8,0,0.9,0.9,0.7695,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.8,1,0.9,0.9,0.6156,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.8,2,0.9,0.9,0.49248,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.8,3,0.9,0.9,0.393984,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.8,4,0.9,0.9,0.315187,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.8,5,0.9,0.9,0.25215,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.95,0,0.9,0.9,0.7695,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.95,1,0.9,0.9,0.731025,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.95,2,0.9,0.9,0.694474,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.95,3,0.9,0.9,0.65975,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.95,4,0.9,0.9,0.626763,not a field baseline; not independent verification of truth
+HYPOTHETICAL INDEPENDENT-EVENT MODEL,0.95,0.95,5,0.9,0.9,0.595424,not a field baseline; not independent verification of truth

@@ -1,0 +1,4 @@
+scenario_label,sport,sampled_assets,complete_records_assessable,complete_and_independently_correct,strict_verified_share,assessable_share,accuracy_conditional_on_assessable
+FICTITIOUS DENOMINATOR EXAMPLE; NOT AN AUDIT,badminton,20,8,5,0.25,0.4,0.625
+FICTITIOUS DENOMINATOR EXAMPLE; NOT AN AUDIT,cricket,10,5,3,0.3,0.5,0.6
+FICTITIOUS DENOMINATOR EXAMPLE; NOT AN AUDIT,football,12,10,8,0.666667,0.833333,0.8

@@ -1,0 +1,189 @@
+{
+  "status": "NO SOLUTION SELECTED",
+  "criteria_weights_owner_approved": false,
+  "note": "Design and synthetic code checks cannot satisfy human testing, independent physical audits, or safety gates.",
+  "valid_observed_staged": {
+    "status": "NOT MEASURED",
+    "setting": "STAGED",
+    "by_concept": {
+      "A": {
+        "observed_trials": 0,
+        "completed_trials": 0,
+        "task_success_rate": null,
+        "median_completed_total_seconds": null,
+        "median_actor_active_seconds": {
+          "student": null,
+          "guard": null,
+          "secretary": null
+        },
+        "eligible_audits": 0,
+        "strict_triad_correct": 0,
+        "strict_accountability_rate": null,
+        "unknown_audit_count": 0,
+        "contradicted_audit_count": 0,
+        "wrong_audit_count": 0,
+        "incomplete_audit_count": 0
+      },
+      "B": {
+        "observed_trials": 0,
+        "completed_trials": 0,
+        "task_success_rate": null,
+        "median_completed_total_seconds": null,
+        "median_actor_active_seconds": {
+          "student": null,
+          "guard": null,
+          "secretary": null
+        },
+        "eligible_audits": 0,
+        "strict_triad_correct": 0,
+        "strict_accountability_rate": null,
+        "unknown_audit_count": 0,
+        "contradicted_audit_count": 0,
+        "wrong_audit_count": 0,
+        "incomplete_audit_count": 0
+      },
+      "C": {
+        "observed_trials": 0,
+        "completed_trials": 0,
+        "task_success_rate": null,
+        "median_completed_total_seconds": null,
+        "median_actor_active_seconds": {
+          "student": null,
+          "guard": null,
+          "secretary": null
+        },
+        "eligible_audits": 0,
+        "strict_triad_correct": 0,
+        "strict_accountability_rate": null,
+        "unknown_audit_count": 0,
+        "contradicted_audit_count": 0,
+        "wrong_audit_count": 0,
+        "incomplete_audit_count": 0
+      }
+    },
+    "data_warnings": []
+  },
+  "valid_observed_live": {
+    "status": "NOT MEASURED",
+    "setting": "LIVE",
+    "by_concept": {
+      "A": {
+        "observed_trials": 0,
+        "completed_trials": 0,
+        "task_success_rate": null,
+        "median_completed_total_seconds": null,
+        "median_actor_active_seconds": {
+          "student": null,
+          "guard": null,
+          "secretary": null
+        },
+        "eligible_audits": 0,
+        "strict_triad_correct": 0,
+        "strict_accountability_rate": null,
+        "unknown_audit_count": 0,
+        "contradicted_audit_count": 0,
+        "wrong_audit_count": 0,
+        "incomplete_audit_count": 0
+      },
+      "B": {
+        "observed_trials": 0,
+        "completed_trials": 0,
+        "task_success_rate": null,
+        "median_completed_total_seconds": null,
+        "median_actor_active_seconds": {
+          "student": null,
+          "guard": null,
+          "secretary": null
+        },
+        "eligible_audits": 0,
+        "strict_triad_correct": 0,
+        "strict_accountability_rate": null,
+        "unknown_audit_count": 0,
+        "contradicted_audit_count": 0,
+        "wrong_audit_count": 0,
+        "incomplete_audit_count": 0
+      },
+      "C": {
+        "observed_trials": 0,
+        "completed_trials": 0,
+        "task_success_rate": null,
+        "median_completed_total_seconds": null,
+        "median_actor_active_seconds": {
+          "student": null,
+          "guard": null,
+          "secretary": null
+        },
+        "eligible_audits": 0,
+        "strict_triad_correct": 0,
+        "strict_accountability_rate": null,
+        "unknown_audit_count": 0,
+        "contradicted_audit_count": 0,
+        "wrong_audit_count": 0,
+        "incomplete_audit_count": 0
+      }
+    },
+    "data_warnings": []
+  },
+  "gate_summary": {
+    "A": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PARTIAL": 0,
+      "UNTESTED": 8
+    },
+    "B": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PARTIAL": 0,
+      "UNTESTED": 8
+    },
+    "C": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PARTIAL": 0,
+      "UNTESTED": 8
+    }
+  },
+  "selection_readiness": {
+    "A": {
+      "gates": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "UNTESTED": 8
+      },
+      "all_gates_pass": false,
+      "live_trials": 0,
+      "live_independent_audits": 0,
+      "live_strict_accountability_rate": null,
+      "ready_for_owner_selection": false
+    },
+    "B": {
+      "gates": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "UNTESTED": 8
+      },
+      "all_gates_pass": false,
+      "live_trials": 0,
+      "live_independent_audits": 0,
+      "live_strict_accountability_rate": null,
+      "ready_for_owner_selection": false
+    },
+    "C": {
+      "gates": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "UNTESTED": 8
+      },
+      "all_gates_pass": false,
+      "live_trials": 0,
+      "live_independent_audits": 0,
+      "live_strict_accountability_rate": null,
+      "ready_for_owner_selection": false
+    }
+  },
+  "warnings": []
+}

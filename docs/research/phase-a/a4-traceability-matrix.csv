@@ -1,0 +1,11 @@
+trace_id,field_finding,evidence_ids,principle_or_hypothesis,candidate_design_implication_not_selected,required_test,provenance
+T01,Key access and declared equipment,A1-002;A1-003;A1-004,Physical access can be granted without validating individual items,Possible item identity + event capture,Controlled issue and return reconciliation,Reported + inferred
+T02,Informal student transfers,A2-003;A2-011,Physical custody may move without a register event,Optional low-friction transfer and responsible-party tracking,Simulated transfer and audit,Reported + hypothesis
+T03,Tournament kit exception,A2-009;A3-012,Kit withdrawal with permission may lack routine entry,Kit-level batch checkout with preapproved captain,Timed tournament kit scenario,Reported + hypothesis
+T04,Damage commingled with usable stock,A1-010;A2-005,Recorded or implied availability may not represent usability,Return inspection; unavailable/repair state,Condition-status accuracy audit,Reported + hypothesis
+T05,Late damage awareness,A1-009;A3-009,Feedback pathway relies on later complaints,Event-triggered condition report and repair owner,Repair ticket discovery lead time,Reported + hypothesis
+T06,Invoice not inventory,A2-008;A3-011,Purchase documents do not describe current condition,Asset receipt/registration and lifecycle history,Receipt-to-asset reconciliation,Reported + hypothesis
+T07,Long procurement route,A1-012;A3-010;A3-011,Approval and quotation burden can create delay,Process visibility and clear statuses; not automatic bypass,Case timeline before-after,"Reported practice, not verified policy"
+T08,5-minute journey,A1-006;A3-005,Walking dominates some reported elapsed time,Avoid unjustified assumption software accelerates journey,Observed timings with walking separated,"Estimate, not measured"
+T09,Usable/damaged ratio,A3-006;A3-014,80:20 assumption may distort prioritization,Audit by category prior to benefit claim,Physical condition counts,Scenario only
+T10,Accountability KPI,A3-013;A3-014,Missing recorded attributes restrict strict verification,Triad location/custodian/condition; completeness + accuracy,"Snapshot audit, counts, unknown flags",Decision + unmeasured

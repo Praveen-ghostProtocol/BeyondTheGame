@@ -1,0 +1,13 @@
+id,function_or_problem,evidence_basis,b1_inference_or_requirement,status,measurement_to_validate
+B1-R01,Access and custody,Guard logs room key not verified individual assets,Represent access event and asset transfer separately,Proposed model,Compare declarations against physical issue sample
+B1-R02,Multiple users while key checked out,Secretary reports shared access,Do not assume key signer is every item's custodian,Reported plus inference,Observe access overlap with permission
+B1-R03,Informal asset transfer,Secretary reports on-ground and occasional later transfers,Represent holder/team changes independently from access,Proposed model,Anonymous transfer scenario sample
+B1-R04,Return verification,Return accepted on student word,Model claimed return separately from reconciled physical return,Proposed model,Compare item lists to inspected returns
+B1-R05,Condition tracking,Secretary reports damaged equipment mixed with usable,Represent condition as independent from location and custody,Proposed model,Inventory audit by condition
+B1-R06,Maintenance discovery,Secretary learns of damage often after new equipment request,Record discovery separately from unknown damage occurrence,Proposed model,Collect retrospective repair milestones when possible
+B1-R07,Tournament exception,Captain may collect kit with permission and no ledger entry,Support explicit low-friction exception and kit manifest,Reported plus proposed model,Timed tournament kit scenarios
+B1-R08,Procurement,Office bills exist but no verified live stock inventory,Separate purchase evidence from current asset status,Proposed model,Reconcile bills with sampled physical items
+B1-R09,Consumables,Several sports use consumable items,Use quantity-level accounting when item-level identification is impractical,Analyst hypothesis,Compare counting workload and accuracy
+B1-R10,Audit metric,Primary KPI approved as fully verified accountability,Validate location custody condition jointly at one timestamp,Approved metric specification,Independent sample audit
+B1-R11,User effort,Students expect 24/7 access and captains avoid prematch paperwork,Bound verification overhead to avoid deterring use,Design constraint,Task time user feedback and bypass behavior
+B1-R12,Spending policies,Secretary reports three quotations for purchases >= INR 10000,Keep purchasing decision authority outside proposed app,Reported local procedure pending policy verification,Review hostel written purchasing process

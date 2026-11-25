@@ -1,0 +1,37 @@
+scenario_id,concept,synthetic_check_status,mechanism_tested,evidence_class,field_validation
+C2-S01,A,LOGIC_CHECK_PASS,Room key change independent of item state,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S02,A,LOGIC_CHECK_PASS,Last usable item conflict handling,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S03,A,LOGIC_CHECK_PASS,Separate durable IDs and consumable lot conservation,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S04,A,LOGIC_CHECK_PASS,Off-ground handover retains named operational custody,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S05,A,LOGIC_CHECK_PASS,Key return and self-declared return do not verify stock,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S06,A,DESIGN_ONLY_NOT_END_TO_END_TESTED,Kit manifest or manual checklist mechanism,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S07,A,LOGIC_CHECK_PASS,Late damage report retains unknown occurrence time,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S08,A,DESIGN_ONLY_NOT_END_TO_END_TESTED,Repair return requires independent inspection,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S09,A,DESIGN_ONLY_NOT_END_TO_END_TESTED,Receipt mismatch visible without fabricated enrolled item,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S10,A,LOGIC_CHECK_PASS,Offline conflict cannot silently overwrite item,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S11,A,DESIGN_ONLY_NOT_END_TO_END_TESTED,Unknown audit attribute is not counted correct,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S12,A,DESIGN_ONLY_NOT_END_TO_END_TESTED,Aggregate inventory state conservation,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S01,B,LOGIC_CHECK_PASS,Room key change independent of item state,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S02,B,LOGIC_CHECK_PASS,Last usable item conflict handling,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S03,B,LOGIC_CHECK_PASS,Separate durable IDs and consumable lot conservation,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S04,B,LOGIC_CHECK_PASS,Off-ground handover retains named operational custody,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S05,B,LOGIC_CHECK_PASS,Key return and self-declared return do not verify stock,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S06,B,DESIGN_ONLY_NOT_END_TO_END_TESTED,Kit manifest or manual checklist mechanism,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S07,B,LOGIC_CHECK_PASS,Late damage report retains unknown occurrence time,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S08,B,DESIGN_ONLY_NOT_END_TO_END_TESTED,Repair return requires independent inspection,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S09,B,DESIGN_ONLY_NOT_END_TO_END_TESTED,Receipt mismatch visible without fabricated enrolled item,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S10,B,LOGIC_CHECK_PASS,Offline conflict cannot silently overwrite item,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S11,B,DESIGN_ONLY_NOT_END_TO_END_TESTED,Unknown audit attribute is not counted correct,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S12,B,DESIGN_ONLY_NOT_END_TO_END_TESTED,Aggregate inventory state conservation,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S01,C,LOGIC_CHECK_PASS,Room key change independent of item state,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S02,C,LOGIC_CHECK_PASS,Last usable item conflict handling,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S03,C,LOGIC_CHECK_PASS,Separate durable IDs and consumable lot conservation,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S04,C,LOGIC_CHECK_PASS,Off-ground handover retains named operational custody,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S05,C,LOGIC_CHECK_PASS,Key return and self-declared return do not verify stock,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S06,C,LOGIC_CHECK_PASS,Kit manifest or manual checklist mechanism,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S07,C,LOGIC_CHECK_PASS,Late damage report retains unknown occurrence time,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S08,C,LOGIC_CHECK_PASS,Repair return requires independent inspection,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S09,C,LOGIC_CHECK_PASS,Receipt mismatch visible without fabricated enrolled item,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S10,C,LOGIC_CHECK_PASS,Offline conflict cannot silently overwrite item,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S11,C,DESIGN_ONLY_NOT_END_TO_END_TESTED,Unknown audit attribute is not counted correct,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED
+C2-S12,C,DESIGN_ONLY_NOT_END_TO_END_TESTED,Aggregate inventory state conservation,SYNTHETIC_CODE_EXECUTION,NOT_PERFORMED

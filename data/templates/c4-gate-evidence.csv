@@ -1,0 +1,25 @@
+gate_id,concept_A_B_C,gate,test_scenario,status,setting,evidence_reference,reviewer_code,review_date,observations,next_action
+G01,A,24/7 borrowing continuity,Night scenario,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G01,B,24/7 borrowing continuity,Night scenario,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G01,C,24/7 borrowing continuity,Night scenario,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G02,A,Room key vs item records separate,Key return without equipment,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G02,B,Room key vs item records separate,Key return without equipment,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G02,C,Room key vs item records separate,Key return without equipment,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G03,A,No double confirmed item assignment,Last racket contention,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G03,B,No double confirmed item assignment,Last racket contention,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G03,C,No double confirmed item assignment,Last racket contention,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G04,A,Known damage quarantined,Damaged returns and vendor return,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G04,B,Known damage quarantined,Damaged returns and vendor return,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G04,C,Known damage quarantined,Damaged returns and vendor return,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G05,A,Safe offline/conflict treatment,Offline late return,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G05,B,Safe offline/conflict treatment,Offline late return,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G05,C,Safe offline/conflict treatment,Offline late return,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G06,A,Verified triad accountability,Independent audit,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G06,B,Verified triad accountability,Independent audit,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G06,C,Verified triad accountability,Independent audit,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G07,A,Minimal guard role and usable captain process,Night and tournament kit,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G07,B,Minimal guard role and usable captain process,Night and tournament kit,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G07,C,Minimal guard role and usable captain process,Night and tournament kit,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G08,A,Privacy and official approvals preserved,Finance + public export,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G08,B,Privacy and official approvals preserved,Finance + public export,UNTESTED,,,,,,Run a controlled test and record independent evidence
+G08,C,Privacy and official approvals preserved,Finance + public export,UNTESTED,,,,,,Run a controlled test and record independent evidence

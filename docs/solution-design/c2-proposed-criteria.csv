@@ -1,0 +1,8 @@
+criterion,proposed_weight_percent_UNAPPROVED,operational_definition,evidence_method,notes
+Accountability accuracy,30,Strict audited location + custody + condition; unknown separately counted,Independent physical audit; n/N; include contradicted and unassessable counts,Primary outcome; not measured
+Workflow burden and usability,20,"User/guard/secretary time, action count, task completion, abandonment","Timed scenario trials; role-level steps, errors, completion",Must not shift unreasonable work to guards
+Reliability and failure safety,15,"Double issue, offline conflicts, wrong statuses, recoverability",Scripted fail-case pass rates; event log audit,Hard gates override any total score
+Tournament suitability,10,Time to issue grouped kit; missing components detectable,Match-day scenario times + discrepancy outcome,No every-player scan requirement
+Lifecycle coverage and maintainability,10,"Damage, repair, purchases, training and corrections",B4 scenario coverage + operator feedback,Check operational ownership and ongoing burden
+Total ownership cost,10,"Materials, devices, hosting, training, setup and upkeep",Real invoices + documented estimates; cost in INR per site/year,No unsupported rupee figure
+Privacy and adoption,5,"Least privilege, no public personal data, staff/student acceptance",Privacy review; user interviews; task error and consent,Consent and security non-negotiable

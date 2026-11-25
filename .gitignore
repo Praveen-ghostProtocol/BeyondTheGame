@@ -23,5 +23,3 @@ coverage/
 playwright-report/
 test-results/
 app/private/
-.vercel/
-public/

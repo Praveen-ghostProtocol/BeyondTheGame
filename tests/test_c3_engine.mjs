@@ -1,0 +1,22 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {seed,apply,safeApply,inventorySummary} from '../models/c3/engine.mjs';
+for(const mode of ['A','B','C']){
+ test(`${mode}: key and item custody independent`,()=>{let s=seed(mode);s=apply(s,'key_out',{student:'S1'});s=apply(s,'key_back',{student:'S1'});assert.equal(s.assets['R-001'].holder,'STORE');});
+ test(`${mode}: self reported return never verified`,()=>{let s=apply(seed(mode),'issue',{id:'R-001',to:'S1',role:'custodian'});s=apply(s,'return_claim',{id:'R-001'});assert.equal(s.assets['R-001'].status,'INSPECTION');assert.equal(s.assets['R-001'].condition,'UNKNOWN');});
+ test(`${mode}: consumable balance`,()=>{let s=apply(seed(mode),'consume',{lot:'SHUTTLE',qty:3});assert.equal(s.lots.SHUTTLE.quantity,7);assert.equal(inventorySummary(s).total,7);});
+ test(`${mode}: damaged item cannot claim usable via key change`,()=>{let s=seed(mode);s=apply(s,'key_out',{student:'S1'});s=apply(s,'key_back',{student:'S1'});assert.equal(s.assets['T-001'].status,'DAMAGED');});
+ test(`${mode}: latest damage report does not infer blame or occurrence date`,()=>{let s=apply(seed(mode),'damage',{id:'B-001'});assert.equal(s.events.at(-1).blame,'NOT_INFERRED');assert.equal(s.events.at(-1).occurrenceTime,'UNKNOWN');});
+ test(`${mode}: inventory conservation after updates`,()=>{let s=seed(mode);s=apply(s,'damage',{id:'R-001'});assert.equal(inventorySummary(s).reconciles,true);});
+}
+test('A: paper conflict is flagged, not magically prevented',()=>{let s=seed('A');s=apply(s,'issue',{id:'R-001',to:'ONE'});s=apply(s,'issue',{id:'R-001',to:'TWO'});assert.equal(s.exceptions.at(-1).type,'PAPER_CONFLICT_RISK');});
+for(const mode of ['B','C']) test(`${mode}: duplicate issue blocked in local reference model`,()=>{let s=apply(seed(mode),'issue',{id:'R-001',to:'ONE',role:'custodian'});assert.equal(safeApply(s,'issue',{id:'R-001',to:'TWO',role:'custodian'}).ok,false);});
+test('B: maintenance action unavailable',()=>{assert.equal(safeApply(seed('B'),'repair_start',{id:'T-001',role:'secretary'}).ok,false);});
+test('C: issue requires staff demo role',()=>{assert.equal(safeApply(seed('C'),'issue',{id:'R-001',to:'S1',role:'student'}).ok,false);});
+test('C: kit issue atomic; partial return identifies exactly missing component',()=>{let s=seed('C');s=apply(s,'kit_issue',{kit:'KIT-CRICKET',to:'TEAM1',role:'custodian'});s=apply(s,'kit_partial_return',{kit:'KIT-CRICKET',returned:['B-001','P-001'],role:'custodian'});assert.equal(s.assets['P-002'].status,'UNRESOLVED');assert.deepEqual(s.exceptions.at(-1).missing,['P-002']);});
+test('C: kit issue fails without partial commitment',()=>{let s=apply(seed('C'),'damage',{id:'B-001'});const out=safeApply(s,'kit_issue',{kit:'KIT-CRICKET',to:'TEAM1',role:'custodian'});assert.equal(out.ok,false);assert.equal(out.state.assets['P-001'].status,'AVAILABLE');});
+test('C: repair vendor return cannot bypass condition inspection',()=>{let s=seed('C');s=apply(s,'damage',{id:'R-001'});s=apply(s,'repair_start',{id:'R-001',role:'secretary'});s=apply(s,'repair_finish',{id:'R-001',role:'maintenance'});assert.equal(s.assets['R-001'].status,'INSPECTION');s=apply(s,'inspect',{id:'R-001',role:'secretary',pass:true});assert.equal(s.assets['R-001'].status,'AVAILABLE');});
+test('C: procurement receipt discrepancy explicit, not automatic inventory',()=>{let s=seed('C');s=apply(s,'purchase_request',{role:'secretary',item:'Bats',ordered:2});s=apply(s,'purchase_receive',{role:'secretary',ref:'PUR-1',qty:1});assert.equal(s.purchases[0].status,'RECEIPT_DISCREPANCY');assert.equal(inventorySummary(s).total,7);});
+test('C: offline conflicting update does not overwrite current stock',()=>{let s=seed('C');s=apply(s,'offline_conflict',{id:'R-001',message:'stale return'});assert.equal(s.assets['R-001'].status,'AVAILABLE');assert.equal(s.exceptions.at(-1).type,'OFFLINE_RECONCILIATION_REQUIRED');});
+test('C: retire only with secretary demo role',()=>{let s=seed('C');assert.equal(safeApply(s,'retire',{id:'T-001',role:'student'}).ok,false);s=apply(s,'retire',{id:'T-001',role:'secretary'});assert.equal(s.assets['T-001'].status,'RETIRED');});
+test('C: normal request cannot issue damaged item',()=>{assert.equal(safeApply(seed('C'),'issue',{id:'T-001',to:'S1',role:'custodian'}).ok,false);});
+test('audit unknown remains unknown, not accepted as correct',()=>{let s=apply(seed('C'),'audit_note',{id:'R-001',attribute:'condition',verdict:'unknown'});assert.equal(s.notes[0].verdict,'unknown');});

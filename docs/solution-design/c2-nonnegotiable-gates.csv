@@ -1,0 +1,9 @@
+gate_id,gate,linked_requirement_ids,test_scenario,candidates,status,decision_rule
+G01,24/7 borrowing continuity,B4-R01,Night scenario,A;B;C,UNTESTED,Fail if authorized normal borrowing is blocked by secretary unavailability
+G02,Room key vs item records separate,B4-R02;B4-R15,Key return without equipment,A;B;C,UNTESTED,No automatic item return from key hand-in
+G03,No double confirmed item assignment,B4-R08;B4-R11,Last racket contention,A;B;C,UNTESTED,Paper may reconcile rather than prevent: distinguish strict pass from detection-only
+G04,Known damage quarantined,B4-R19;B4-R23,Damaged returns and vendor return,A;B;C,UNTESTED,Known damaged item cannot be represented confidently usable
+G05,Safe offline/conflict treatment,B4-R34,Offline late return,A;B;C,UNTESTED,No silent last-write-wins of contradictory custody events
+G06,Verified triad accountability,B4-R29;B4-R30,Independent audit,A;B;C,UNTESTED,"Must distinguish correct, unknown/unassessable and contradicted"
+G07,Minimal guard role and usable captain process,B4-R17;B4-R32,Night and tournament kit,A;B;C,UNTESTED,No guard condition-inspection assumption; acceptable match-day effort to be approved
+G08,Privacy and official approvals preserved,B4-R26;B4-R35;B4-R36,Finance + public export,A;B;C,UNTESTED,"No publication of student personal data, no unauthorized approval"

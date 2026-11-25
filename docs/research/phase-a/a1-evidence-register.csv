@@ -1,0 +1,46 @@
+evidence_id,category,claim,source,confidence,status,next_validation
+A1-001,R,Alaknanda houses approximately 400 students,serving sports secretary,medium,reported,confirm official occupancy if needed
+A1-002,R,Equipment room accessible 24/7 via security-held key,serving sports secretary,high,reported,confirm guard protocol
+A1-003,R,Guard retains ID and logs student details intended items issue/return time and student signatures,serving sports secretary,high,reported,review anonymized register template
+A1-004,R,Actual item type/count and returns are not physically checked,serving sports secretary,high,reported,observe sample issue/return transactions
+A1-005,R,Multiple students can access room with shared key,serving sports secretary,high,reported,clarify simultaneous key handling
+A1-006,E,End-to-end equipment collection takes approximately five minutes,serving sports secretary,low,informal estimate,time sampled transactions and separate walk vs register vs search
+A1-007,R,Daily equipment borrowing volume unknown,serving sports secretary,high,unknown,count anonymized register entries
+A1-008,R,Items often not returned to planned shelves but generally easy to find,serving sports secretary,medium,reported,physical inventory walkthrough
+A1-009,R,Damage is often discovered after subsequent equipment request or complaint,serving sports secretary,medium,reported,confirm incident histories
+A1-010,R,Damaged items are not consistently segregated,serving sports secretary,medium,reported,physical condition audit
+A1-011,R,Sports secretary coordinates purchases and repairs rather than issuing,serving sports secretary,high,reported,confirm responsibility workflow
+A1-012,R,Purchase threshold below INR 10000 reimbursement vs at or above INR 10000 three quotes and direct payment,serving sports secretary,medium,reported,confirm policy with hostel office
+A1-013,R,An approximately INR 15000 cricket bat reportedly broke last year and was replaced with cheaper model,serving sports secretary,medium,reported,seek invoice or non-identifying supporting record
+A1-014,R,Other hostels reportedly use similar workflows,serving sports secretary,low,unverified generalization,confirm independently before citing as institute-wide
+A1-015,I,Key-control is not equivalent to verified item custody,analysis of A1-003 through A1-005,high,hypothesis grounded in workflow,test reconciliation between declarations and inventory
+A1-016,I,Unverified item custody may affect damage accountability,analysis of A1-004 and A1-009,medium,hypothesis,study documented incidents and transfers
+A1-017,R,Student complaints are limited and requests are commonly for replacement supplies,serving sports secretary,medium,reported,seek complaint history if available
+A1-018,R,Regular users and inventory quantities are unknown,serving sports secretary,high,unknown,measure via audit or sampled register
+A2-001,R,Another student can access the sports room while the original student has the key checked out,sports secretary A2 answers,high,reported,confirm precise physical mechanism of simultaneous access
+A2-002,R,Guard retains initial student ID until the same signer returns checked-out key,sports secretary A2 answers,high,reported,confirm guard handling during overlapping access
+A2-003,R,Borrowed equipment is typically transferred between players on the ground; sometimes taken away and returned later,sports secretary A2 answers,high,reported,estimate frequency without personal records
+A2-004,R,"All equipment stored in the sports room is hostel-owned, not personally owned",sports secretary A2 answers,high,reported,verify through inventory and storage policy as needed
+A2-005,R,Sports secretary cannot determine when specific equipment was damaged,sports secretary A2 answers,high,reported,collect anonymized known damage cases
+A2-006,R,Sports secretary has final authority to discard damaged equipment,sports secretary A2 answers,high,reported,confirm office disposal policy if wider pilot
+A2-007,R,Sports secretary has no independent repair spending threshold identified; approvals/reimbursements follow hostel process,sports secretary A2 answers,medium,reported,confirm repair approval procedure with office
+A2-008,R,Purchase bill identifies what was bought; all purchased items stored in sports room; no specific item-location list,sports secretary A2 answers,high,reported,reconcile sample bill to current stock
+A2-009,R,During tournaments captain may sign out a kit normally or collect it on secretary permission without register entry,sports secretary A2 answers,high,reported,anonymously document frequency and component counts
+A2-010,R,Secretary tries to give sports equal priority; hostel office may favor medal-winning sports when funds constrained,sports secretary A2 answers,medium,reported,confirm whether prioritization is written or situational
+A2-011,I,A key access log cannot be assumed to represent each specific item transfer,logical result of A1 and A2 workflows,high,grounded design inference,test item-versus-register reconciliation
+A2-012,I,Pre-match logging creates a tension between accountability and avoiding player disruption,tournament exception and stated rationale,high,hypothesis for design,ask captains/guard about acceptable handover burden
+A3-001,R,Badminton and volleyball reportedly played daily in Alaknanda,sports secretary A3 answers,medium,reported cadence,verify usage calendar if needed
+A3-002,R,Cricket and football reportedly played every other day,sports secretary A3 answers,medium,reported cadence,verify usage calendar if needed
+A3-003,I,Estimated 20 to 22 sport-use occasions per week across four sports,derived from A3-001 and A3-002,medium,derived scenario; not loans,do not cite as borrowing transactions
+A3-004,S,Hypothetical 1 to 3 loan events per sport-use occasion scenario produces 20 to 66 events per week,analyst scenario not field observation,low,simulation only,verify against guard register if later needed
+A3-005,E,About 2 minutes walking and 2 minutes guard-register interaction in approximately 5 minute acquisition journey,sports secretary A3 answers,low,informal estimate,time sample and separate components
+A3-006,S,Assume 80 percent usable and 20 percent damaged stock for modeling,sports secretary explicitly chose estimate,low,unverified assumption,physical stock audit required
+A3-007,R,One badminton racket reportedly absent after student claimed to have returned it,sports secretary A3 answers,medium,recalled incident,cannot establish date responsibility or verified missing-item rate
+A3-008,E,Repair turnaround usually 3 to 7 days,sports secretary A3 answers,low,recalled range,collect case timestamps when feasible
+A3-009,R,Repairs delayed by approvals vendor work and sports secretary availability,sports secretary A3 answers,medium,reported contributing factors,quantify individual segments when available
+A3-010,R,Recent approximately INR 2500 reimbursement concerned tournament refreshments not sports equipment,sports secretary A3 answers,medium,recalled transaction,do not count as equipment procurement
+A3-011,R,Approximately INR 30000 cricket equipment purchase about ten months ago,sports secretary A3 answers,medium,recalled procurement example,review redacted bill if available
+A3-012,R,Kit borrowing without register entry limited to inter-hostel tournament season around February-March,sports secretary A3 answers,medium,reported exception timing,transaction share unknown
+A3-013,D,Primary KPI approved as equipment accountability,sports secretary A3 answer,high,decision,define and instrument triad-based verification
+A3-014,U,No inventory denominator independent physical audit or register counts available in current study,sports secretary A3 answers,high,unknown measurable baseline,do not claim current accountable percentage
+A3-015,U,Authorization for staged trial with guard and final study boundary not explicitly confirmed in A3 response,unanswered A3 Q10 Q11,high,pending,"ask at future implementation gate, not required to build A3 templates"
