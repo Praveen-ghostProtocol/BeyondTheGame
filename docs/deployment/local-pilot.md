@@ -1,5 +1,7 @@
 # Local pilot and deployment handoff
 
+> Update, 25 November 2026: GitHub publication and Vercel + Supabase hosting now succeeded. Read [the current cloud guide](vercel-supabase.md). The blocked-connection account below is historical. The host launcher `Start-Local.cmd` is provided; local browser reachability still needs host-side confirmation.
+
 The full application is implemented and has synthetic automated verification. Actual deployment networking, physical scanning and field use remain separate checks. Do not confuse the isolated demonstration with enrolled hostel stock.
 
 ## Start and access

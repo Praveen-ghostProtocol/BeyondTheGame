@@ -14,7 +14,11 @@ Read the [run guide](app/README.md), [architecture/limits](docs/implementation/p
 
 **Evidence boundary:** software and browser tests use synthetic fixtures. Physical inventory, participant testing, phone-camera/printed-label validation, the strict accountability baseline and before/after improvements remain **NOT MEASURED**. The integrated direction is an owner decision, not a validated comparative winner. Earlier C4 records below remain historical. `final/` remains empty and reserved for the eventual academic submission.
 
-**GitHub:** local meaningful commits are preserved. The connected GitHub write attempt was rejected with 403 `Resource not accessible by integration`; direct Git networking is also unavailable. A successful remote push has not been claimed.
+**Hosted demonstration:** [Open Beyond the Game](https://beyond-the-game-omega.vercel.app). Vercel serves the application with a private Supabase PostgreSQL backend. Synthetic hosted sign-in, checkout, return and separate inspection were verified. Generated access instructions are in local `app/private/cloud-access.txt`; they are excluded from Git. See the [cloud deployment and verification guide](docs/deployment/vercel-supabase.md).
+
+**GitHub:** research and application commits are published to [Praveen-ghostProtocol/BeyondTheGame](https://github.com/Praveen-ghostProtocol/BeyondTheGame). The initial integration permission problem was resolved. Vercel deployment currently uses source uploads; automatic deployments from GitHub pushes are not configured.
+
+**Local startup:** double-click `Start-Local.cmd` on your computer, or keep the Python command above running in a terminal. A sandbox-launched process was not reliably accessible from the host browser; use the hosted demonstration while checking local startup.
 
 ## Historical Phase C4 status
 **Phase C4 — all eight owner policies approved 25 November 2026 (₹0 new spending), controlled-trial plan, evidence-gated readiness tools and a counterbalanced 216-run study schedule are prepared. Human trials, field validation, eight non-negotiable gates, and winner selection remain pending. No real accountability baseline or measured outcome improvement exists.** This repository package contains no invented measurements or fabricated incidents.

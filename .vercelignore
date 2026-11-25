@@ -1,0 +1,14 @@
+.git
+.tmp
+.env*
+app/private
+__pycache__
+**/__pycache__
+node_modules
+tests
+docs
+data
+models
+prototypes
+final
+*.gitbundle
