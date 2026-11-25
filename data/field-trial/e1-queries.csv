@@ -1,0 +1,9 @@
+run,question,asset_id,question_text,answer_given,correct_Y_N,seconds,source,notes
+OLD,Q1,BD-002,Where is it and who has it?,,,,,
+OLD,Q2,BD-001,Is it usable right now?,,,,,
+OLD,Q3,CB-001,Who has it?,,,,,
+OLD,Q4,FB-001,Is it back and usable?,,,,,
+NEW,Q1,BD-002,Where is it and who has it?,,,,,
+NEW,Q2,BD-001,Is it usable right now?,,,,,
+NEW,Q3,CB-001,Who has it?,,,,,
+NEW,Q4,FB-001,Is it back and usable?,,,,,
